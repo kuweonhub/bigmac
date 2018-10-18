@@ -1,3 +1,5 @@
 /.gradle
 /build
 /out
+/src/main/resources
+/src/main/client

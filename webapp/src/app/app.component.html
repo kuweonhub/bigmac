@@ -1,0 +1,84 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <a class="navbar-brand" href="#headline">
+    <img src="./assets/burger.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    BigMac Index / Consumer prices comparison
+  </a>
+  <div>
+    <a class="navbar-brand" href="#comparison">
+      <button class="btn btn-sm btn-outline-secondary" type="button">Comparison</button>
+    </a>
+    <a class="navbar-brand" href="#tec-cloud">
+      <button class="btn btn-sm btn-outline-secondary" type="button">Technologies</button>
+    </a>
+    <a class="navbar-brand" href="#impressum">
+      <button class="btn btn-sm btn-outline-secondary" type="button">Impressum</button>
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <a name="headline"></a>
+
+  <div class="jumbotron">
+    <h1>BigMac Index / Consumer prices comparison</h1>
+    <p class="lead">Spring Boot, Angular v6 & Bootstrap 4 Demo</p>
+    <p>In this Demo I glued together a simple
+      <a href="#tec-cloud">Rest Client Server Open Data Single Page Javascript Groovy App</a> using a potent up-to-date (2018) toolset.<br/>
+      I consider it my personal radar for technologies used in an innovative environment ;-)</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="https://github.com/kuweonhub/bigmac.git" target="_new" role="button">Github</a>
+      <a class="btn btn-primary btn-lg" href="#diagram" role="button">Component diagram</a>
+      <a class="btn btn-primary btn-lg" href="https://www.linkedin.com/in/kai-berkau-berlin/" target="_new" role="button">Contact me via linkedin</a>
+    </p>
+  </div>
+
+  <a name="comparison"></a>
+  <div class="card-deck">
+    <div class="card">
+	      <app-graph></app-graph>
+    </div>
+    <div class="card">
+	      <app-graph></app-graph>
+    </div>
+  </div>
+
+  <div class="card mt-4 mb-4">
+    <div class="card-header">
+      Metrics
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Big Mac Index</h5>
+      <p class="card-text">The Big Mac Index is published by The Economist as an informal way of measuring the purchasing power parity (PPP)
+        between two currencies and provides a test of the extent to which market exchange rates result in goods costing the same in
+        different countries. [<a href="https://en.wikipedia.org/wiki/Big_Mac_Index" target="_new" >Wikipedia</a>]</p>
+      <h5 class="card-title">Consumer price index</h5>
+      <p class="card-text">A consumer price index (CPI) measures changes in the price level of market basket of consumer goods and services purchased by households.
+        [<a href="https://en.wikipedia.org/wiki/Consumer_price_index" target="_new" >Wikipedia</a>]</p>
+    </div>
+  </div>
+
+  <a name="tec-cloud"></a>
+  <div class="card mt-4 mb-4">
+    <div class="card-header">
+      Technologies, frameworks and features used in this demo
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Click on the name for info</h5>
+      <div id="canvasFrame">
+        <canvas id="canvas" class="canvas" height="450"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <a name="impressum"></a>
+  <div class="card mt-4 mb-4">
+    <div class="card-header">
+      Impressum
+    </div>
+    <div class="card-body">
+      <p class="card-text">This is <a href="https://www.gesetze-im-internet.de/tmg/__5.html" target="_new">not a commercial site</a> and offers no impressum.</p>
+      <a href="https://www.linkedin.com/in/kai-berkau-berlin/" target="_new" class="btn btn-primary">Contact me via linkedin</a>
+    </div>
+  </div>
+</div>

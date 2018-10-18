@@ -1,0 +1,6 @@
+A runnable jar can be build with 'gradle clean build'
+
+Icon burger.svg:
+Author 	Sebastian Meier
+https://creativecommons.org/publicdomain/zero/1.0/deed.en
+https://commons.wikimedia.org/wiki/File:Double_Burger_-_The_Noun_Project.svg

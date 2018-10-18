@@ -1,0 +1,44 @@
+@startuml
+
+title Component diagram of the bigmac Application
+
+node "app" {
+  [BigMacApp]
+}
+
+[quandl.com]
+[csv]
+
+node "lib" {
+  [DataService]
+  [BicMacDao]
+  [ConsumerPriceDao]
+  [CountryDao]
+  [AbstractTimeSeriesConverter]
+  [BigMacConverter]
+  [ConsumerPriceConverter]
+  [TimeSeriesIntersector]
+  [ValueNormalizer]
+  [CorsFilter]
+
+  BicMacDao --> quandl.com
+  ConsumerPriceDao --> quandl.com
+  CountryDao --> csv
+
+
+  DataService ..> BicMacDao : use
+  DataService ..> ConsumerPriceDao : use
+  DataService ..> CountryDao : use
+  DataService ..> BigMacConverter : use
+  DataService ..> ConsumerPriceConverter : use
+  DataService ..> TimeSeriesIntersector : use
+  DataService ..> ValueNormalizer : use
+  AbstractTimeSeriesConverter --> BigMacConverter
+  AbstractTimeSeriesConverter --> ConsumerPriceConverter
+}
+
+Service -- DataService
+
+app -down->lib
+
+@enduml

@@ -1,0 +1,13 @@
+<div class="card-body">
+  <h5 class="card-title">BigMac / Consumer prices {{currentCountry}}</h5>
+  <div>
+    <select (change)="onChange($event)" class="form-control" id="country" required>
+      <option *ngFor="let c of countries" [value]="c.code">{{c.name}}</option>
+    </select>
+
+    <nvd3 [options]="options" [data]="data"></nvd3>
+  </div>
+</div>
+
+
+

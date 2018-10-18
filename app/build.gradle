@@ -1,0 +1,53 @@
+buildscript {
+    ext { springBootVersion = '2.0.3.RELEASE' }
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: "com.moowork.node"
+
+node {
+    version = '9.8.0'
+    download = true
+    nodeModulesDir = file("../webapp/")
+}
+
+jar {
+    enabled = true
+    baseName = 'bigmac-app'
+    version = '1.0.0'
+}
+
+task buildAngular(type: NpmTask) {
+    args = ['run', 'build']
+}
+
+buildAngular.dependsOn(npm_install)
+build.dependsOn(buildAngular)
+
+group = 'org.unkongress'
+version = '1.0.0'
+sourceCompatibility = 1.8
+
+repositories { mavenCentral() }
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile project(':lib')
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+}
+

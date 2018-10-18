@@ -1,0 +1,13 @@
+@startuml
+
+title Component diagram of the javascript client
+
+[app]
+[data.service]
+[graph.component]
+
+app ..> graph.component : use
+graph.component ..> data.service : use
+data.service ..> Service : use
+
+@enduml

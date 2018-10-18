@@ -1,0 +1,5 @@
+rootProject.name = 'bigmac'
+
+include 'lib'
+include 'app'
+include 'webapp'

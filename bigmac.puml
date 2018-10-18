@@ -1,0 +1,25 @@
+@startuml
+
+title high level components and context
+
+node "js client" {
+[webapp]
+}
+
+
+node "app" {
+[lib]
+Service - lib
+}
+
+webapp ..> Service : use
+
+node "quandl.com" {
+}
+
+lib ..> quandl.com : use
+
+note left of quandl.com
+  open data api
+end note
+@enduml
